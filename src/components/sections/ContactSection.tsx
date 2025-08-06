@@ -41,19 +41,19 @@ const ContactSection = () => {
     {
       icon: <Mail className="h-6 w-6" />,
       label: "Email",
-      href: "mailto:alex.rodriguez@email.com",
+      href: "mailto:eduardovaldivia130@outlook.es",
       color: "text-red-400"
     },
     {
       icon: <Linkedin className="h-6 w-6" />,
       label: "LinkedIn",
-      href: "https://linkedin.com/in/alexrodriguez",
+      href: "https://linkedin.com/in/christopher-valdivia",
       color: "text-blue-400"
     },
     {
       icon: <Github className="h-6 w-6" />,
       label: "GitHub",
-      href: "https://github.com/alexrodriguez",
+      href: "https://github.com/Eduardo1300",
       color: "text-purple-400"
     }
   ];
@@ -144,6 +144,7 @@ const ContactSection = () => {
                 Estoy siempre abierto a nuevas oportunidades y colaboraciones. 
                 Ya sea que tengas una pregunta técnica, una propuesta de proyecto 
                 o simplemente quieras charlar sobre desarrollo, no dudes en contactarme.
+                📍 Ubicado en Lima, Perú | 📞 +51 953 587 619
               </p>
 
               <div className="space-y-4">
@@ -175,7 +176,8 @@ const ContactSection = () => {
                   🚀 Disponible para nuevos proyectos
                 </h4>
                 <p className="text-sm text-muted-foreground">
-                  Actualmente acepto proyectos freelance y oportunidades laborales remotas o en Madrid.
+                  Actualmente acepto proyectos freelance y oportunidades laborales remotas o en Lima, Perú.
+                  Busco aportar valor en proyectos reales y crecer profesionalmente en entornos dinámicos.
                 </p>
               </div>
             </div>

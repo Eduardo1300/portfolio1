@@ -5,32 +5,32 @@ const StackSection = () => {
     {
       category: "Frontend",
       icon: <Code2 className="h-8 w-8" />,
-      items: ["React", "TypeScript", "Tailwind CSS", "Next.js"]
+      items: ["React", "TypeScript", "Tailwind CSS", "HTML", "CSS", "JavaScript"]
     },
     {
       category: "Backend",
       icon: <Server className="h-8 w-8" />,
-      items: ["NestJS", "Node.js", "Express", "REST APIs"]
+      items: ["Node.js", "NestJS", "PostgreSQL", "APIs REST", "JWT"]
     },
     {
       category: "Base de Datos",
       icon: <Database className="h-8 w-8" />,
-      items: ["PostgreSQL", "MongoDB", "Prisma", "TypeORM"]
+      items: ["PostgreSQL", "MongoDB (básico)"]
     },
     {
-      category: "Herramientas",
+      category: "DevOps & Tools",
       icon: <GitBranch className="h-8 w-8" />,
-      items: ["Git", "Docker", "AWS", "Vercel"]
+      items: ["Git", "GitHub", "Docker", "CI/CD", "Postman", "Insomnia"]
     },
     {
-      category: "Diseño",
+      category: "Metodologías",
       icon: <Palette className="h-8 w-8" />,
-      items: ["Figma", "Adobe XD", "Responsive Design", "UI/UX"]
+      items: ["Scrum", "Diseño responsivo", "Testing básico (Jest)"]
     },
     {
-      category: "Mobile",
+      category: "Idiomas",
       icon: <Smartphone className="h-8 w-8" />,
-      items: ["React Native", "Flutter", "Progressive Web Apps"]
+      items: ["Español (Nativo)", "Inglés (Avanzado)"]
     }
   ];
 
@@ -79,12 +79,18 @@ const StackSection = () => {
         <div className="mt-16 text-center">
           <div className="portfolio-card p-8 rounded-lg max-w-3xl mx-auto">
             <h3 className="text-2xl font-semibold mb-4 text-foreground">
-              Siempre Aprendiendo
+              Formación Académica
             </h3>
-            <p className="text-muted-foreground">
-              Me mantengo actualizado con las últimas tendencias y tecnologías del desarrollo web. 
-              Actualmente explorando IA, Web3 y mejores prácticas de arquitectura de software.
-            </p>
+            <div className="text-left space-y-4">
+              <div>
+                <h4 className="text-lg font-semibold text-primary">CIBERTEC – Instituto Superior Privado</h4>
+                <p className="text-muted-foreground">Computación e Informática – En curso (5to ciclo)</p>
+                <p className="text-sm text-muted-foreground">2023 - Actualidad</p>
+                <p className="text-sm text-muted-foreground mt-2">
+                  Cursos clave: Desarrollo Web, OOP, Bases de Datos, Servicios REST, Scrum
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

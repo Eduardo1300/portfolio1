@@ -36,16 +36,17 @@ const HeroSection = () => {
               Hola, soy
             </p>
             <h1 className="text-5xl md:text-7xl font-bold mb-4 portfolio-hero-gradient animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
-              Alex Rodríguez
+              Christopher Eduardo Valdivia Baca
             </h1>
             <h2 className="text-2xl md:text-4xl text-foreground/90 mb-6 animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-              Desarrollador Full Stack
+              Desarrollador Full Stack Junior
             </h2>
           </div>
 
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8 leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-            Especializado en crear aplicaciones web modernas y escalables. 
-            Transformo ideas en soluciones digitales elegantes y funcionales.
+            Soy un Desarrollador Full Stack Junior con experiencia construyendo soluciones web modernas y escalables. 
+            Manejo tecnologías de frontend como React, TypeScript y Tailwind CSS, así como backend con NestJS y PostgreSQL. 
+            Me apasiona construir software limpio, funcional y orientado al usuario final.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in-up" style={{ animationDelay: '1s' }}>

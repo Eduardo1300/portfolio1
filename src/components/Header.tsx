@@ -6,7 +6,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['inicio', 'stack', 'proyectos', 'contacto'];
+      const sections = ['inicio', 'stack', 'experiencia', 'proyectos', 'contacto'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -35,6 +35,7 @@ const Header = () => {
   const navItems = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'stack', label: 'Stack' },
+    { id: 'experiencia', label: 'Experiencia' },
     { id: 'proyectos', label: 'Proyectos' },
     { id: 'contacto', label: 'Contacto' },
   ];
@@ -44,7 +45,7 @@ const Header = () => {
       <div className="container mx-auto px-6 py-4">
         <nav className="flex items-center justify-between">
           <div className="portfolio-hero-gradient text-2xl font-bold">
-            Alex Rodríguez
+            Christopher Valdivia
           </div>
           
           <div className="hidden md:flex items-center space-x-1">

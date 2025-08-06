@@ -114,7 +114,7 @@ const ProjectsSection = () => {
               variant="outline"
               className="border-primary text-primary hover:bg-primary hover:text-primary-foreground portfolio-transition"
             >
-              <a href="https://github.com/alexrodriguez" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/Eduardo1300" target="_blank" rel="noopener noreferrer">
                 <Github className="mr-2 h-4 w-4" />
                 Ver GitHub
               </a>
