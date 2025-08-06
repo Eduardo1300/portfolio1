@@ -1,73 +1,109 @@
-# Welcome to your Lovable project
+# Portafolio Personal - Christopher Eduardo Valdivia Baca
 
-## Project info
+## 🚀 Descripción del Proyecto
 
-**URL**: https://lovable.dev/projects/646fad93-9725-4f5f-9af8-215171cc30db
+Portafolio personal moderno y responsivo desarrollado para mostrar mis habilidades como Desarrollador Full Stack Junior. Incluye información sobre mi experiencia profesional, proyectos destacados, habilidades técnicas y formas de contacto.
 
-## How can I edit this code?
+## 👨‍💻 Sobre Mí
 
-There are several ways of editing your application.
+**Christopher Eduardo Valdivia Baca**  
+Desarrollador Full Stack Junior | Estudiante de Computación e Informática  
+📍 Lima, Perú | 📞 +51 953 587 619  
+📧 eduardovaldivia130@outlook.es  
 
-**Use Lovable**
+Soy un desarrollador apasionado por crear soluciones web modernas y escalables. Actualmente cursando el 5to ciclo de Computación e Informática en CIBERTEC y con experiencia práctica en desarrollo web.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/646fad93-9725-4f5f-9af8-215171cc30db) and start prompting.
+## 🛠️ Tecnologías Utilizadas
 
-Changes made via Lovable will be committed automatically to this repo.
+Este proyecto está construido con:
 
-**Use your preferred IDE**
+- **Frontend**: React 18, TypeScript, Tailwind CSS
+- **Herramientas**: Vite, shadcn/ui
+- **Estilo**: CSS moderno con animaciones y diseño responsivo
+- **Iconos**: Lucide React
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 🎯 Características
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- ✅ Diseño moderno y responsivo
+- ✅ Animaciones suaves y elegantes
+- ✅ Secciones organizadas (Inicio, Stack, Experiencia, Proyectos, Contacto)
+- ✅ Formulario de contacto funcional
+- ✅ Enlaces a redes sociales
+- ✅ Optimizado para dispositivos móviles y desktop
+- ✅ Código limpio y bien estructurado
 
-Follow these steps:
+## 🚀 Instalación y Desarrollo
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Para ejecutar este proyecto localmente:
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+```bash
+# 1. Clona el repositorio
+git clone https://github.com/Eduardo1300/dev-folio-pro.git
 
-# Step 3: Install the necessary dependencies.
-npm i
+# 2. Navega al directorio del proyecto
+cd dev-folio-pro
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# 3. Instala las dependencias
+npm install
+
+# 4. Inicia el servidor de desarrollo
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+El proyecto estará disponible en `http://localhost:5173`
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## 📁 Estructura del Proyecto
 
-**Use GitHub Codespaces**
+```
+src/
+├── components/
+│   ├── Header.tsx              # Navegación principal
+│   ├── Footer.tsx              # Pie de página
+│   ├── sections/
+│   │   ├── HeroSection.tsx     # Sección de presentación
+│   │   ├── StackSection.tsx    # Habilidades técnicas
+│   │   ├── ExperienceSection.tsx # Experiencia profesional
+│   │   ├── ProjectsSection.tsx # Proyectos destacados
+│   │   └── ContactSection.tsx  # Información de contacto
+│   └── ui/                     # Componentes UI reutilizables
+├── pages/
+│   ├── Index.tsx              # Página principal
+│   └── NotFound.tsx           # Página 404
+├── hooks/                     # Hooks personalizados
+├── lib/                       # Utilidades
+└── assets/                    # Imágenes y recursos
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Secciones del Portafolio
 
-## What technologies are used for this project?
+1. **Inicio** - Presentación personal y llamadas a la acción
+2. **Stack Tecnológico** - Habilidades y herramientas que manejo
+3. **Experiencia** - Trayectoria profesional y habilidades blandas
+4. **Proyectos** - Trabajos destacados con enlaces a demos y código
+5. **Contacto** - Formulario de contacto e información personal
 
-This project is built with:
+## 🌐 Deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+```bash
+# Construir para producción
+npm run build
 
-## How can I deploy this project?
+# Previsualizar la build
+npm run preview
+```
 
-Simply open [Lovable](https://lovable.dev/projects/646fad93-9725-4f5f-9af8-215171cc30db) and click on Share -> Publish.
+## 📞 Contacto
 
-## Can I connect a custom domain to my Lovable project?
+¿Tienes alguna pregunta o propuesta de colaboración?
 
-Yes, you can!
+- **Email**: eduardovaldivia130@outlook.es
+- **GitHub**: [@Eduardo1300](https://github.com/Eduardo1300)
+- **LinkedIn**: [christopher-valdivia](https://linkedin.com/in/christopher-valdivia)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+## 📄 Licencia
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+Este proyecto es de uso personal. Si deseas usar alguna parte del código, por favor menciona la fuente.
+
+---
+
+⭐ Si te gusta este proyecto, ¡no olvides darle una estrella en GitHub!
