@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Github, Linkedin, Mail, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { sendEmail, type EmailTemplateParams } from '@/lib/emailjs';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ const ContactSection = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const { toast } = useToast();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -24,17 +26,75 @@ const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Prevent multiple submissions
+    if (isSubmitting) return;
+    
     setIsSubmitting(true);
 
-    // Simulate form submission
-    setTimeout(() => {
-      toast({
-        title: "¡Mensaje enviado!",
-        description: "Te responderé lo antes posible. Gracias por contactarme.",
+    try {
+      // Get current date and time in Lima, Peru timezone
+      const now = new Date();
+      const peruTime = new Date(now.toLocaleString("en-US", {timeZone: "America/Lima"}));
+      
+      const fechaCompleta = peruTime.toLocaleDateString('es-PE', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
       });
+
+      // Prepare template parameters - using exact names from your template
+      const templateParams: EmailTemplateParams = {
+        user_name: formData.name,
+        user_email: formData.email,
+        message: formData.message,
+        to_name: 'Christopher Eduardo Valdivia Baca',
+        from_email: formData.email,
+        reply_to: formData.email,
+        date: fechaCompleta,
+        time: '', // Empty since we're combining date and time
+      };
+
+      console.log('📧 ENVIANDO DATOS A EMAILJS:', templateParams);
+
+      // Send email using EmailJS
+      const result = await sendEmail(templateParams);
+
+      console.log('✅ Email sent successfully:', result);
+      
+      // Clear form first
       setFormData({ name: '', email: '', message: '' });
-      setIsSubmitting(false);
-    }, 1000);
+      setSubmitStatus('success');
+      
+      // Use alert as a safe alternative to toast
+      alert('¡Mensaje enviado exitosamente! Te responderé lo antes posible.');
+      
+      // Reset status after 3 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 3000);
+
+    } catch (error) {
+      console.error('❌ Error sending email:', error);
+      setSubmitStatus('error');
+      
+      // Use alert as a safe alternative to toast
+      alert('Error al enviar el mensaje. Por favor, intenta de nuevo.');
+      
+      // Reset status after 3 seconds
+      setTimeout(() => {
+        setSubmitStatus('idle');
+      }, 3000);
+    } finally {
+      // Reset submitting state after a delay
+      setTimeout(() => {
+        setIsSubmitting(false);
+      }, 1000);
+    }
   };
 
   const socialLinks = [
@@ -83,11 +143,12 @@ const ContactSection = () => {
                   <Input
                     type="text"
                     name="name"
-                    placeholder="Tu nombre"
+                    placeholder="Tu nombre completo"
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="bg-secondary/50 border-border/50 focus:border-primary portfolio-transition"
+                    disabled={isSubmitting}
+                    className="bg-secondary/50 border-border/50 focus:border-primary portfolio-transition disabled:opacity-50"
                   />
                 </div>
                 
@@ -95,33 +156,38 @@ const ContactSection = () => {
                   <Input
                     type="email"
                     name="email"
-                    placeholder="Tu email"
+                    placeholder="Tu dirección de email"
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="bg-secondary/50 border-border/50 focus:border-primary portfolio-transition"
+                    disabled={isSubmitting}
+                    className="bg-secondary/50 border-border/50 focus:border-primary portfolio-transition disabled:opacity-50"
                   />
                 </div>
                 
                 <div>
                   <Textarea
                     name="message"
-                    placeholder="Tu mensaje"
+                    placeholder="Escribe tu mensaje aquí..."
                     value={formData.message}
                     onChange={handleInputChange}
                     required
+                    disabled={isSubmitting}
                     rows={5}
-                    className="bg-secondary/50 border-border/50 focus:border-primary portfolio-transition resize-none"
+                    className="bg-secondary/50 border-border/50 focus:border-primary portfolio-transition resize-none disabled:opacity-50"
                   />
                 </div>
                 
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary hover:bg-primary-glow portfolio-transition portfolio-glow"
+                  className="w-full bg-primary hover:bg-primary-glow portfolio-transition portfolio-glow disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
-                    "Enviando..."
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Enviando mensaje...
+                    </>
                   ) : (
                     <>
                       <Send className="mr-2 h-4 w-4" />
@@ -129,6 +195,24 @@ const ContactSection = () => {
                     </>
                   )}
                 </Button>
+                
+                {/* Status message */}
+                {submitStatus === 'success' && (
+                  <div className="text-green-600 text-sm text-center p-2 bg-green-50 rounded">
+                    ✅ ¡Mensaje enviado exitosamente!
+                  </div>
+                )}
+                
+                {submitStatus === 'error' && (
+                  <div className="text-red-600 text-sm text-center p-2 bg-red-50 rounded">
+                    ❌ Error al enviar. Inténtalo de nuevo.
+                  </div>
+                )}
+                
+                <p className="text-xs text-muted-foreground text-center">
+                  Al enviar este formulario, recibiré tu mensaje directamente en mi email. 
+                  Me comprometo a responder en un plazo máximo de 24-48 horas.
+                </p>
               </form>
             </div>
           </div>
