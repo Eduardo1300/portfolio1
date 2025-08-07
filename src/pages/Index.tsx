@@ -5,7 +5,7 @@ import ExperienceSection from '@/components/sections/ExperienceSection';
 import ProjectsSection from '@/components/sections/ProjectsSection';
 import ContactSection from '@/components/sections/ContactSection';
 import Footer from '@/components/Footer';
-import { ToastTest } from '@/components/ToastTest';
+
 
 const Index = () => {
   return (
@@ -19,7 +19,7 @@ const Index = () => {
         <ContactSection />
       </main>
       <Footer />
-      <ToastTest />
+     
     </div>
   );
 };
